@@ -7,7 +7,7 @@
 
 namespace
 {
-constexpr int kHdrOnVibrance = 65;
+constexpr int kHdrOnVibrance = 60;
 constexpr int kHdrOffVibrance = 50;
 
 bool SetDvcWithRetry(const std::wstring& deviceName, int level,
@@ -27,8 +27,6 @@ bool SetDvcWithRetry(const std::wstring& deviceName, int level,
 
 int main()
 {
-    //std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-
     HdrDisplayState before{};
     std::wstring error;
     if (!HdrController::QueryPrimaryDisplay(before, error) ||
